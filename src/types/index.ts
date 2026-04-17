@@ -43,8 +43,10 @@ export interface StorageSchema {
 
 /** Thrown when a localStorage write operation fails. */
 export class StorageError extends Error {
-  constructor(message: string, public readonly cause?: unknown) {
+  readonly cause?: unknown;
+  constructor(message: string, cause?: unknown) {
     super(message);
     this.name = 'StorageError';
+    this.cause = cause;
   }
 }

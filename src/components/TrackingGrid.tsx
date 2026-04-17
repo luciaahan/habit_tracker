@@ -20,7 +20,6 @@ export function TrackingGrid({
   completions,
   dateRange,
   streaks = {},
-  todayCompletions = new Set(),
 }: TrackingGridProps) {
   const completionSet = new Set(
     completions.map((c) => `${c.habitId}|${c.date}`)

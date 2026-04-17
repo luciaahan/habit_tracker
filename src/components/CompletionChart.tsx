@@ -1,3 +1,4 @@
+import type { TooltipItem } from 'chart.js';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -22,9 +23,9 @@ ChartJS.register(
 );
 
 export interface CompletionChartProps {
-  dateRange: string[];                      // matches TrackingGrid dateRange
-  completionsByDate: Record<string, number>; // date → total count
-  totalHabits: number;                      // for y-axis max
+  dateRange: string[];
+  completionsByDate: Record<string, number>;
+  totalHabits: number;
 }
 
 export function CompletionChart({ dateRange, completionsByDate, totalHabits }: CompletionChartProps) {
@@ -56,9 +57,9 @@ export function CompletionChart({ dateRange, completionsByDate, totalHabits }: C
       },
       tooltip: {
         callbacks: {
-          title: (items: { label: string }[]) => items[0]?.label ?? '',
-          label: (item: { parsed: { y: number } }) =>
-            `Completions: ${item.parsed.y}`,
+          title: (items: TooltipItem<'line'>[]) => items[0]?.label ?? '',
+          label: (item: TooltipItem<'line'>) =>
+            `Completions: ${item.parsed.y ?? 0}`,
         },
       },
     },

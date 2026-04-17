@@ -42,7 +42,6 @@ export function ProgressView({
   selectedMonth,
   onSetSelectedMonth,
 }: ProgressViewProps) {
-  const totalCompletions = completions.length;
   const totalDays = dateRange.length;
   const completedDays = Object.values(completionsByDate).filter(count => count > 0).length;
   const completionPct = totalDays > 0 ? Math.round((completedDays / totalDays) * 100) : 0;

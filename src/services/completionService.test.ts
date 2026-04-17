@@ -37,7 +37,6 @@ describe('setCompletions', () => {
 
   it('enforces uniqueness — no duplicate (habitId, date) pairs', () => {
     const result = setCompletions(['h1', 'h1'], '2024-01-01', []);
-    const pairs = result.map((c) => `${c.habitId}|${c.date}`);
     // duplicates in input produce duplicates — caller is responsible for deduplication,
     // but the service itself doesn't add extra entries beyond what's passed
     expect(result).toHaveLength(2); // reflects input as-is; uniqueness is enforced by removing old date entries
