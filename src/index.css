@@ -1,0 +1,26 @@
+:root {
+  --color-teal: rgb(75, 192, 192);
+  --color-teal-bg: rgba(75, 192, 192, 0.15);
+  --color-sticky-bg: #b2e8e8;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: 'Atma', system-ui, sans-serif;
+  background: #f9fafb;
+  color: #111827;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Barriecito', system-ui, sans-serif;
+}
